@@ -2,7 +2,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #E8E0F0;
+  background: #F4F1FA;
   height: 100%;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +15,7 @@ html, body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #E8E0F0 0%, #D8D0E8 100%);
+  background: #F4F1FA;
   position: relative;
   overflow: hidden;
 }
@@ -43,13 +43,13 @@ html, body {
 .logo-text {
   font-size: 22px;
   font-weight: 800;
-  color: #2E5FA1;
+  color: #6C5CE7;
   letter-spacing: 2px;
 }
 .avatar-circle {
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4A90D9, #2E5FA1);
+  background: linear-gradient(135deg, #6C5CE7, #a29bfe);
   color: white;
   display: flex; align-items: center; justify-content: center;
   font-weight: 700;
@@ -92,7 +92,7 @@ html, body {
 .greeting {
   font-size: 24px;
   font-weight: 700;
-  color: #2E5FA1;
+  color: #1a1a2e;
   margin-bottom: 4px;
 }
 .subtitle {
@@ -282,148 +282,264 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* Migraine Risk Card */
-.risk-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.risk-top {
+/* Hero Risk Card */
+.hero-risk {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
+  background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 14px;
+  color: white;
 }
-.risk-gauge-wrap {
+.hero-left { flex-shrink: 0; }
+.hero-gauge {
   position: relative;
-  width: 90px;
-  height: 90px;
-  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
 }
-.risk-gauge { width: 100%; height: 100%; }
-.risk-arc { transition: stroke-dashoffset 1.2s ease; }
-.risk-center {
+.hero-gauge svg { width: 100%; height: 100%; }
+.hero-gauge-text {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.risk-num {
+.hero-num { font-size: 26px; font-weight: 800; color: white; line-height: 1; }
+.hero-unit { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.hero-right { flex: 1; }
+.hero-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.75;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.hero-status {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.hero-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.stat-card {
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-icon {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.5);
+}
+.stat-num {
   font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 4px;
+}
+.stat-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.7;
+}
+.stat-coral {
+  background: #FDCDC5;
+  color: #8B3A2F;
+}
+.stat-coral .stat-icon { color: #C0574A; }
+.stat-mint {
+  background: #C5F0E0;
+  color: #1E6B4E;
+}
+.stat-mint .stat-icon { color: #2D8E6B; }
+.stat-lavender {
+  background: #DDD6FE;
+  color: #4C3D99;
+}
+.stat-lavender .stat-icon { color: #6C5CE7; }
+.stat-sky {
+  background: #BAE6FD;
+  color: #1A5276;
+}
+.stat-sky .stat-icon { color: #2980B9; }
+
+/* Card Header Row */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.card-header-row h3 { margin-bottom: 0; }
+.card-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6C5CE7;
+  cursor: pointer;
+}
+
+/* Vitals Row */
+.vitals-row {
+  display: flex;
+  align-items: center;
+}
+.vital {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vital-val {
+  font-size: 24px;
   font-weight: 800;
   color: #1a1a2e;
   line-height: 1;
 }
-.risk-pct {
-  font-size: 14px;
+.vital-unit {
+  font-size: 11px;
   font-weight: 600;
-  color: #6B7B8D;
+  color: #999;
+  margin-top: 2px;
 }
-.risk-headline { flex: 1; }
-.risk-badge {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.risk-badge.low { background: #E8F5E9; color: #2E7D32; }
-.risk-badge.moderate { background: #FFF3E0; color: #E8811A; }
-.risk-badge.high { background: #FFEBEE; color: #C62828; }
-.risk-caption {
-  font-size: 13px;
+.vital-label {
+  font-size: 11px;
   color: #6B7B8D;
-  line-height: 1.45;
   margin-top: 6px;
+  font-weight: 500;
 }
-.risk-divider {
-  height: 1px;
+.vital-sep {
+  width: 1px;
+  height: 36px;
   background: #F0F2F5;
-  margin: 16px 0;
 }
-.risk-row {
+
+/* Week Chart */
+.week-chart {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  padding: 0 4px;
+  margin-bottom: 10px;
 }
-.risk-stat {
+.week-bar-group {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  height: 100%;
+  justify-content: flex-end;
 }
-.risk-stat-label {
+.week-bar {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 4px;
+}
+.week-bar-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.coral-fill { background: #FDCDC5; }
+.mint-fill { background: #C5F0E0; }
+.lavender-fill { background: #DDD6FE; }
+.sky-fill { background: #BAE6FD; }
+.week-day {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+}
+.week-bar-group.today .week-day {
+  color: #6C5CE7;
+  font-weight: 700;
+}
+.week-legend {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-size: 11px;
   color: #999;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
 }
-.risk-stat-val {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #1a1a2e;
-}
-.risk-stat-val.rising { color: #D84315; }
-.risk-stat-val.stable { color: #2E7D32; }
-.risk-stat-val.decreasing { color: #1565C0; }
-.risk-stat-val.onset { color: #E8811A; }
-.risk-stat-divider {
-  width: 1px;
-  height: 32px;
-  background: #F0F2F5;
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
 }
 
-/* Activity List (Home) */
-.activity-list { padding: 4px 0; }
-.activity-item {
+/* Home Actions */
+.home-actions {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid #F0F2F5;
+  gap: 10px;
+  margin-bottom: 14px;
 }
-.activity-item:last-child { border-bottom: none; }
-.activity-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.activity-text { font-size: 14px; color: #333; }
-.activity-time { font-size: 12px; color: #999; margin-top: 2px; }
-
-/* Quick Actions */
-.quick-actions {
-  display: flex;
-  gap: 12px;
-}
-.action-btn {
+.home-action {
   flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 16px 8px;
-  background: #F0F7FF;
-  border: 1.5px solid #D0E0F0;
-  border-radius: 12px;
+  padding: 14px;
+  background: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6C5CE7;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  color: #2E5FA1;
-  transition: all 0.2s;
+  font-family: inherit;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.15s;
 }
-.action-btn:active {
-  background: #D0E0F0;
-  transform: scale(0.97);
-}
+.home-action:active { transform: scale(0.97); }
 
 /* Sensors Page */
 .device-list { padding: 4px 0; }

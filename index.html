@@ -49,95 +49,150 @@
     <div class="content-area">
       <!-- HOME PAGE -->
       <div class="page" id="page-home">
-        <div class="mountain-bg"></div>
-        <h1 class="greeting">Welcome back, Jake!</h1>
-        <p class="subtitle">Here's your daily overview.</p>
+        <h1 class="greeting">Hi, Jake</h1>
+        <p class="subtitle">Sunday, March 23</p>
 
-        <div class="risk-card">
-          <div class="risk-top">
-            <div class="risk-gauge-wrap">
-              <svg class="risk-gauge" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#F0F2F5" stroke-width="7"/>
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#E8913A" stroke-width="7"
+        <!-- Migraine Risk Hero -->
+        <div class="hero-risk">
+          <div class="hero-left">
+            <div class="hero-gauge">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#fff" stroke-width="6"
                   stroke-dasharray="263.9" stroke-dashoffset="84.4" stroke-linecap="round"
-                  transform="rotate(-90 50 50)" class="risk-arc"/>
+                  transform="rotate(-90 50 50)"/>
               </svg>
-              <div class="risk-center">
-                <span class="risk-num">68<span class="risk-pct">%</span></span>
+              <div class="hero-gauge-text">
+                <span class="hero-num">68</span>
+                <span class="hero-unit">%</span>
               </div>
             </div>
-            <div class="risk-headline">
-              <span class="risk-badge moderate">Moderate</span>
-              <p class="risk-caption">Migraine risk is elevated. Monitor triggers closely.</p>
-            </div>
           </div>
-          <div class="risk-divider"></div>
-          <div class="risk-row">
-            <div class="risk-stat">
-              <span class="risk-stat-label">Trend</span>
-              <span class="risk-stat-val rising">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+          <div class="hero-right">
+            <span class="hero-label">Migraine Risk</span>
+            <span class="hero-status">Moderate</span>
+            <div class="hero-meta">
+              <span class="hero-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
                 Rising
               </span>
-            </div>
-            <div class="risk-stat-divider"></div>
-            <div class="risk-stat">
-              <span class="risk-stat-label">Est. Onset</span>
-              <span class="risk-stat-val onset">~2 hrs</span>
+              <span class="hero-tag">~2 hrs to onset</span>
             </div>
           </div>
         </div>
 
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card stat-coral">
+            <div class="stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="stat-num">3</span>
+            <span class="stat-label">Migraines<br>this week</span>
+          </div>
+          <div class="stat-card stat-mint">
+            <div class="stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+            </div>
+            <span class="stat-num">7.5</span>
+            <span class="stat-label">Hrs sleep<br>last night</span>
+          </div>
+          <div class="stat-card stat-lavender">
+            <div class="stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+            </div>
+            <span class="stat-num">45%</span>
+            <span class="stat-label">Top trigger<br>Bright lights</span>
+          </div>
+          <div class="stat-card stat-sky">
+            <div class="stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <span class="stat-num">Low</span>
+            <span class="stat-label">Stress<br>level</span>
+          </div>
+        </div>
+
+        <!-- Today's Vitals -->
         <div class="card">
-          <h3>Recent Activity</h3>
-          <div class="activity-list">
-            <div class="activity-item">
-              <div class="activity-dot" style="background:#4CAF50;"></div>
-              <div class="activity-content">
-                <div class="activity-text">Completed daily check-in</div>
-                <div class="activity-time">Today, 7:30 AM</div>
-              </div>
+          <div class="card-header-row">
+            <h3>Today's Vitals</h3>
+            <span class="card-tag">Live</span>
+          </div>
+          <div class="vitals-row">
+            <div class="vital">
+              <span class="vital-val">72</span>
+              <span class="vital-unit">bpm</span>
+              <span class="vital-label">Heart Rate</span>
             </div>
-            <div class="activity-item">
-              <div class="activity-dot" style="background:#2196F3;"></div>
-              <div class="activity-content">
-                <div class="activity-text">Sleep data synced — 7.5 hrs</div>
-                <div class="activity-time">Today, 6:00 AM</div>
-              </div>
+            <div class="vital-sep"></div>
+            <div class="vital">
+              <span class="vital-val">340</span>
+              <span class="vital-unit">lux</span>
+              <span class="vital-label">Light</span>
             </div>
-            <div class="activity-item">
-              <div class="activity-dot" style="background:#FF9800;"></div>
-              <div class="activity-content">
-                <div class="activity-text">Mild headache reported</div>
-                <div class="activity-time">Yesterday, 3:15 PM</div>
-              </div>
-            </div>
-            <div class="activity-item">
-              <div class="activity-dot" style="background:#9C27B0;"></div>
-              <div class="activity-content">
-                <div class="activity-text">Weekly report generated</div>
-                <div class="activity-time">Yesterday, 12:00 PM</div>
-              </div>
+            <div class="vital-sep"></div>
+            <div class="vital">
+              <span class="vital-val">42</span>
+              <span class="vital-unit">dB</span>
+              <span class="vital-label">Noise</span>
             </div>
           </div>
         </div>
 
+        <!-- Weekly Trend -->
         <div class="card">
-          <h3>Quick Actions</h3>
-          <div class="quick-actions">
-            <button class="action-btn" onclick="switchTab('health')">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              <span>Log Symptom</span>
-            </button>
-            <button class="action-btn" onclick="switchTab('sensors')">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              <span>Sensors</span>
-            </button>
-            <button class="action-btn" onclick="switchTab('chat')">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-              <span>Ask AI</span>
-            </button>
+          <div class="card-header-row">
+            <h3>This Week</h3>
+            <span class="card-link" onclick="switchTab('health')">Details</span>
           </div>
+          <div class="week-chart">
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:65%"><div class="week-bar-fill coral-fill"></div></div>
+              <span class="week-day">M</span>
+            </div>
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:30%"><div class="week-bar-fill mint-fill"></div></div>
+              <span class="week-day">T</span>
+            </div>
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:85%"><div class="week-bar-fill coral-fill"></div></div>
+              <span class="week-day">W</span>
+            </div>
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:20%"><div class="week-bar-fill mint-fill"></div></div>
+              <span class="week-day">T</span>
+            </div>
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:50%"><div class="week-bar-fill lavender-fill"></div></div>
+              <span class="week-day">F</span>
+            </div>
+            <div class="week-bar-group">
+              <div class="week-bar" style="height:40%"><div class="week-bar-fill mint-fill"></div></div>
+              <span class="week-day">S</span>
+            </div>
+            <div class="week-bar-group today">
+              <div class="week-bar" style="height:68%"><div class="week-bar-fill sky-fill"></div></div>
+              <span class="week-day">S</span>
+            </div>
+          </div>
+          <div class="week-legend">
+            <span class="legend-item"><span class="legend-dot coral-fill"></span>High</span>
+            <span class="legend-item"><span class="legend-dot lavender-fill"></span>Moderate</span>
+            <span class="legend-item"><span class="legend-dot mint-fill"></span>Low</span>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="home-actions">
+          <button class="home-action" onclick="switchTab('health')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Log Symptom
+          </button>
+          <button class="home-action" onclick="switchTab('chat')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Ask AI
+          </button>
         </div>
       </div>
 
