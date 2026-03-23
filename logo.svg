@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0055CC"/>
+      <stop offset="100%" stop-color="#33CCFF"/>
+    </linearGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="gd" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#99EEFF"/>
+      <stop offset="100%" stop-color="#33BBFF"/>
+    </radialGradient>
+  </defs>
+  <!-- Brain silhouette - right hemisphere (larger, rounded top) -->
+  <path d="M100 180 C90 180 85 175 82 168 L76 150 C72 148 62 140 55 128 C48 116 44 102 46 88 C48 74 54 62 62 53 C70 44 80 38 90 35 C95 33 98 32 100 32" fill="url(#bg)"/>
+  <!-- Brain silhouette - left hemisphere -->
+  <path d="M100 32 C102 32 105 33 110 35 C120 38 130 44 138 53 C146 62 152 74 154 88 C156 102 152 116 145 128 C138 140 128 148 124 150 L118 168 C115 175 110 180 100 180" fill="url(#bg)"/>
+  <!-- Top cleft -->
+  <path d="M100 32 C100 40 100 46 100 52" stroke="url(#bg)" stroke-width="4" fill="none"/>
+  <!-- Right top lobe bump -->
+  <path d="M110 35 C125 30 145 38 148 55 C150 65 147 72 140 78" fill="url(#bg)"/>
+  <!-- Left top lobe bump -->
+  <path d="M90 35 C75 30 55 38 52 55 C50 65 53 72 60 78" fill="url(#bg)"/>
+
+  <!-- White brain fold curves - LEFT SIDE -->
+  <path d="M62 68 C68 58 80 54 90 60" stroke="white" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M56 92 C64 82 78 78 88 84" stroke="white" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M58 114 C66 106 78 104 86 110" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M68 134 C74 128 82 126 90 130" stroke="white" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+  <!-- White brain fold curves - RIGHT SIDE -->
+  <path d="M114 60 C124 54 136 58 142 68" stroke="white" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M112 84 C122 78 136 82 144 92" stroke="white" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M114 110 C122 104 134 106 142 114" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M110 130 C118 126 126 128 132 134" stroke="white" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Center dividing line -->
+  <path d="M100 52 C98 70 96 90 98 108 C99 120 100 135 100 150" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Glowing dot top-right -->
+  <circle cx="148" cy="48" r="8" fill="url(#gd)" filter="url(#g)"/>
+  <circle cx="148" cy="48" r="4.5" fill="white"/>
+</svg>
