@@ -53,48 +53,37 @@
         <h1 class="greeting">Welcome back, Jake!</h1>
         <p class="subtitle">Here's your daily overview.</p>
 
-        <div class="card migraine-risk-card">
-          <h3>Migraine Risk</h3>
-          <div class="risk-dashboard">
-            <!-- Circular Gauge -->
-            <div class="risk-gauge-wrapper">
-              <svg class="risk-gauge" viewBox="0 0 120 120">
-                <defs>
-                  <linearGradient id="riskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#4CAF50"/>
-                    <stop offset="50%" style="stop-color:#FF9800"/>
-                    <stop offset="100%" style="stop-color:#F44336"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="60" cy="60" r="50" fill="none" stroke="#EEF2F7" stroke-width="10"/>
-                <circle cx="60" cy="60" r="50" fill="none" stroke="url(#riskGrad)" stroke-width="10"
-                  stroke-dasharray="314" stroke-dashoffset="100.5" stroke-linecap="round"
-                  transform="rotate(-90 60 60)" class="risk-arc"/>
+        <div class="risk-card">
+          <div class="risk-top">
+            <div class="risk-gauge-wrap">
+              <svg class="risk-gauge" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#F0F2F5" stroke-width="7"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#E8913A" stroke-width="7"
+                  stroke-dasharray="263.9" stroke-dashoffset="84.4" stroke-linecap="round"
+                  transform="rotate(-90 50 50)" class="risk-arc"/>
               </svg>
-              <div class="risk-score-center">
-                <span class="risk-percent">68</span>
-                <span class="risk-percent-sign">%</span>
+              <div class="risk-center">
+                <span class="risk-num">68<span class="risk-pct">%</span></span>
               </div>
             </div>
-            <!-- Risk Details -->
-            <div class="risk-details">
-              <div class="risk-level-badge moderate">Moderate Risk</div>
-              <div class="risk-meta">
-                <div class="risk-meta-item">
-                  <div class="risk-meta-label">Trend</div>
-                  <div class="risk-meta-value trend-rising">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F44336" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l5-5 5 5"/><path d="M7 7l5 5 5-5"/></svg>
-                    Rising
-                  </div>
-                </div>
-                <div class="risk-meta-item">
-                  <div class="risk-meta-label">Possible Onset</div>
-                  <div class="risk-meta-value onset-time">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9800" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    ~2 hours
-                  </div>
-                </div>
-              </div>
+            <div class="risk-headline">
+              <span class="risk-badge moderate">Moderate</span>
+              <p class="risk-caption">Migraine risk is elevated. Monitor triggers closely.</p>
+            </div>
+          </div>
+          <div class="risk-divider"></div>
+          <div class="risk-row">
+            <div class="risk-stat">
+              <span class="risk-stat-label">Trend</span>
+              <span class="risk-stat-val rising">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+                Rising
+              </span>
+            </div>
+            <div class="risk-stat-divider"></div>
+            <div class="risk-stat">
+              <span class="risk-stat-label">Est. Onset</span>
+              <span class="risk-stat-val onset">~2 hrs</span>
             </div>
           </div>
         </div>
