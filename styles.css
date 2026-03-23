@@ -282,28 +282,100 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* Summary Grid (Home) */
-.summary-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* Migraine Risk Dashboard (Home) */
+.migraine-risk-card { overflow: hidden; }
+.risk-dashboard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.risk-gauge-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+.risk-gauge { width: 100%; height: 100%; }
+.risk-arc {
+  transition: stroke-dashoffset 1.5s ease;
+}
+.risk-score-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+.risk-percent {
+  font-size: 36px;
+  font-weight: 800;
+  color: #FF9800;
+  line-height: 1;
+}
+.risk-percent-sign {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FF9800;
+}
+.risk-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
-.summary-item {
-  text-align: center;
-  padding: 14px 8px;
-  background: #F8FAFC;
-  border-radius: 12px;
+.risk-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  width: fit-content;
 }
-.summary-icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 8px;
+.risk-level-badge::before {
+  content: '\26A0\FE0F';
+  font-size: 14px;
 }
-.summary-label { font-size: 12px; color: #6B7B8D; margin-bottom: 4px; }
-.summary-value { font-size: 18px; font-weight: 700; color: #1a1a2e; }
-.summary-value.good { color: #4CAF50; }
-.summary-value.warn { color: #FF9800; }
+.risk-level-badge.low {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+.risk-level-badge.moderate {
+  background: #FFF3E0;
+  color: #E65100;
+}
+.risk-level-badge.high {
+  background: #FFEBEE;
+  color: #C62828;
+}
+.risk-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.risk-meta-item {}
+.risk-meta-label {
+  font-size: 11px;
+  color: #6B7B8D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.risk-meta-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.risk-meta-value.trend-rising { color: #F44336; }
+.risk-meta-value.trend-stable { color: #4CAF50; }
+.risk-meta-value.trend-decreasing { color: #2196F3; }
+.risk-meta-value.onset-time { color: #FF9800; }
 
 /* Activity List (Home) */
 .activity-list { padding: 4px 0; }
