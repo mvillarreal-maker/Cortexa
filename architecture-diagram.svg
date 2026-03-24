@@ -1,0 +1,381 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="50%" stop-color="#1a1a4e"/>
+      <stop offset="100%" stop-color="#24243e"/>
+    </linearGradient>
+    <linearGradient id="databricksGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF3621"/>
+      <stop offset="100%" stop-color="#FF6F61"/>
+    </linearGradient>
+    <linearGradient id="ingestGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e88e5"/>
+      <stop offset="100%" stop-color="#42a5f5"/>
+    </linearGradient>
+    <linearGradient id="storageGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7b1fa2"/>
+      <stop offset="100%" stop-color="#ab47bc"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00897b"/>
+      <stop offset="100%" stop-color="#26a69a"/>
+    </linearGradient>
+    <linearGradient id="servingGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e65100"/>
+      <stop offset="100%" stop-color="#ff9800"/>
+    </linearGradient>
+    <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4A90D9"/>
+      <stop offset="100%" stop-color="#6db3f8"/>
+    </linearGradient>
+    <linearGradient id="govGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c62828"/>
+      <stop offset="100%" stop-color="#ef5350"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowWhite" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff" opacity="0.6"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#FF3621"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1050" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="700" y="42" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700" letter-spacing="1">CORTEXA — Cloud Architecture on Databricks Lakehouse</text>
+  <text x="700" y="64" text-anchor="middle" fill="#aaaacc" font-size="12">Scalable Migraine Health Intelligence Platform</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LAYER 1: Edge / Data Sources (top)         -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="32" y="102" fill="#6db3f8" font-size="11" font-weight="600" letter-spacing="2">EDGE &amp; DATA SOURCES</text>
+  <line x1="32" y1="108" x2="280" y2="108" stroke="#6db3f8" stroke-width="1" opacity="0.4"/>
+
+  <!-- Migraine Patch -->
+  <rect x="32" y="120" width="160" height="90" rx="10" fill="#1c2340" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="62" cy="148" r="14" fill="none" stroke="#4A90D9" stroke-width="1.5"/>
+  <circle cx="62" cy="148" r="8" fill="none" stroke="#4A90D9" stroke-width="1" stroke-dasharray="2 2"/>
+  <circle cx="62" cy="148" r="2.5" fill="#4A90D9"/>
+  <text x="82" y="144" fill="#ffffff" font-size="11" font-weight="600">Cortexa</text>
+  <text x="82" y="158" fill="#aaaacc" font-size="9">Migraine Patch</text>
+  <text x="48" y="183" fill="#6db3f8" font-size="8">Skin Temp · Tension</text>
+  <text x="48" y="195" fill="#6db3f8" font-size="8">Heart Rate · Stress</text>
+
+  <!-- Mobile App -->
+  <rect x="212" y="120" width="160" height="90" rx="10" fill="#1c2340" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="235" y="136" width="20" height="32" rx="3" fill="none" stroke="#4A90D9" stroke-width="1.2"/>
+  <line x1="240" y1="162" x2="250" y2="162" stroke="#4A90D9" stroke-width="1"/>
+  <text x="262" y="148" fill="#ffffff" font-size="11" font-weight="600">Mobile App</text>
+  <text x="262" y="162" fill="#aaaacc" font-size="9">PWA / Native</text>
+  <text x="228" y="183" fill="#6db3f8" font-size="8">Check-ins · Symptoms</text>
+  <text x="228" y="195" fill="#6db3f8" font-size="8">Sleep · Chat AI</text>
+
+  <!-- Environment Sensors -->
+  <rect x="392" y="120" width="160" height="90" rx="10" fill="#1c2340" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="422" cy="152" r="12" fill="none" stroke="#4A90D9" stroke-width="1.2"/>
+  <path d="M418 152 L422 145 L426 152" fill="none" stroke="#4A90D9" stroke-width="1.2"/>
+  <text x="442" y="148" fill="#ffffff" font-size="11" font-weight="600">Environment</text>
+  <text x="442" y="162" fill="#aaaacc" font-size="9">IoT Sensors</text>
+  <text x="408" y="183" fill="#6db3f8" font-size="8">Light · Sound · Weather</text>
+  <text x="408" y="195" fill="#6db3f8" font-size="8">Barometric Pressure</text>
+
+  <!-- EHR / 3rd Party -->
+  <rect x="572" y="120" width="160" height="90" rx="10" fill="#1c2340" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+  <path d="M598 142 h16 v20 h-16z" fill="none" stroke="#4A90D9" stroke-width="1.2"/>
+  <path d="M602 148 h8 M606 144 v8" stroke="#4A90D9" stroke-width="1.2"/>
+  <text x="620" y="148" fill="#ffffff" font-size="11" font-weight="600">EHR / FHIR</text>
+  <text x="620" y="162" fill="#aaaacc" font-size="9">Health Records</text>
+  <text x="588" y="183" fill="#6db3f8" font-size="8">HL7 FHIR R4 APIs</text>
+  <text x="588" y="195" fill="#6db3f8" font-size="8">Clinical Notes · Rx</text>
+
+  <!-- Arrows from Edge to Ingestion -->
+  <line x1="112" y1="210" x2="112" y2="258" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+  <line x1="292" y1="210" x2="292" y2="258" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+  <line x1="472" y1="210" x2="472" y2="258" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+  <line x1="652" y1="210" x2="652" y2="258" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LAYER 2: Ingestion                          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="32" y="252" fill="#42a5f5" font-size="11" font-weight="600" letter-spacing="2">INGESTION LAYER</text>
+  <line x1="32" y1="258" x2="220" y2="258" stroke="#42a5f5" stroke-width="1" opacity="0.4"/>
+
+  <rect x="32" y="268" width="700" height="70" rx="10" fill="#1c2340" stroke="#1e88e5" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="46" y="280" width="140" height="46" rx="6" fill="#0d1b38" stroke="#1e88e5" stroke-width="1"/>
+  <text x="116" y="300" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="600">Auto Loader</text>
+  <text x="116" y="314" text-anchor="middle" fill="#aaaacc" font-size="8">Streaming Ingest</text>
+
+  <rect x="200" y="280" width="140" height="46" rx="6" fill="#0d1b38" stroke="#1e88e5" stroke-width="1"/>
+  <text x="270" y="300" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="600">Event Hubs / Kafka</text>
+  <text x="270" y="314" text-anchor="middle" fill="#aaaacc" font-size="8">Real-time Biometrics</text>
+
+  <rect x="354" y="280" width="140" height="46" rx="6" fill="#0d1b38" stroke="#1e88e5" stroke-width="1"/>
+  <text x="424" y="300" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="600">REST API Gateway</text>
+  <text x="424" y="314" text-anchor="middle" fill="#aaaacc" font-size="8">Mobile + EHR APIs</text>
+
+  <rect x="508" y="280" width="140" height="46" rx="6" fill="#0d1b38" stroke="#1e88e5" stroke-width="1"/>
+  <text x="578" y="300" text-anchor="middle" fill="#42a5f5" font-size="10" font-weight="600">Delta Live Tables</text>
+  <text x="578" y="314" text-anchor="middle" fill="#aaaacc" font-size="8">Data Quality Pipeline</text>
+
+  <text x="672" y="282" fill="#1e88e5" font-size="18" font-weight="700" opacity="0.3">DLT</text>
+
+  <!-- Arrow Ingestion → Lakehouse -->
+  <line x1="382" y1="338" x2="382" y2="388" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LAYER 3: Databricks Lakehouse (Medallion)      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <text x="32" y="385" fill="#ab47bc" font-size="11" font-weight="600" letter-spacing="2">DATABRICKS LAKEHOUSE — MEDALLION ARCHITECTURE</text>
+  <line x1="32" y1="391" x2="440" y2="391" stroke="#ab47bc" stroke-width="1" opacity="0.4"/>
+
+  <!-- Medallion Zone -->
+  <rect x="32" y="398" width="700" height="130" rx="12" fill="#1c2340" stroke="#7b1fa2" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Bronze -->
+  <rect x="50" y="412" width="195" height="100" rx="8" fill="#1a1510" stroke="#cd7f32" stroke-width="1.5"/>
+  <circle cx="72" cy="434" r="10" fill="#cd7f32" opacity="0.2" stroke="#cd7f32" stroke-width="1"/>
+  <text x="72" y="438" text-anchor="middle" fill="#cd7f32" font-size="10" font-weight="700">B</text>
+  <text x="90" y="438" fill="#cd7f32" font-size="12" font-weight="700">Bronze</text>
+  <text x="66" y="458" fill="#aaaacc" font-size="8">Raw sensor streams</text>
+  <text x="66" y="470" fill="#aaaacc" font-size="8">Check-in JSON payloads</text>
+  <text x="66" y="482" fill="#aaaacc" font-size="8">EHR FHIR bundles</text>
+  <text x="66" y="494" fill="#aaaacc" font-size="8">Environment raw readings</text>
+
+  <!-- Arrow Bronze → Silver -->
+  <line x1="245" y1="462" x2="268" y2="462" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- Silver -->
+  <rect x="275" y="412" width="195" height="100" rx="8" fill="#101820" stroke="#c0c0c0" stroke-width="1.5"/>
+  <circle cx="297" cy="434" r="10" fill="#c0c0c0" opacity="0.2" stroke="#c0c0c0" stroke-width="1"/>
+  <text x="297" y="438" text-anchor="middle" fill="#c0c0c0" font-size="10" font-weight="700">S</text>
+  <text x="315" y="438" fill="#c0c0c0" font-size="12" font-weight="700">Silver</text>
+  <text x="291" y="458" fill="#aaaacc" font-size="8">Cleaned biometric signals</text>
+  <text x="291" y="470" fill="#aaaacc" font-size="8">Validated symptom records</text>
+  <text x="291" y="482" fill="#aaaacc" font-size="8">Normalized patient profiles</text>
+  <text x="291" y="494" fill="#aaaacc" font-size="8">De-identified data (HIPAA)</text>
+
+  <!-- Arrow Silver → Gold -->
+  <line x1="470" y1="462" x2="493" y2="462" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- Gold -->
+  <rect x="500" y="412" width="220" height="100" rx="8" fill="#1a1a10" stroke="#ffd700" stroke-width="1.5"/>
+  <circle cx="522" cy="434" r="10" fill="#ffd700" opacity="0.2" stroke="#ffd700" stroke-width="1"/>
+  <text x="522" y="438" text-anchor="middle" fill="#ffd700" font-size="10" font-weight="700">G</text>
+  <text x="540" y="438" fill="#ffd700" font-size="12" font-weight="700">Gold</text>
+  <text x="516" y="458" fill="#aaaacc" font-size="8">Health Score aggregations</text>
+  <text x="516" y="470" fill="#aaaacc" font-size="8">Trigger correlation matrices</text>
+  <text x="516" y="482" fill="#aaaacc" font-size="8">Sleep pattern features</text>
+  <text x="516" y="494" fill="#aaaacc" font-size="8">Patient 360 views (Unity Catalog)</text>
+
+  <!-- Delta Lake badge -->
+  <text x="660" y="425" fill="#7b1fa2" font-size="9" font-weight="600" opacity="0.6">Delta Lake</text>
+
+  <!-- Arrow Lakehouse → ML / Serving -->
+  <line x1="280" y1="528" x2="280" y2="578" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+  <line x1="520" y1="528" x2="520" y2="578" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LAYER 4: ML & AI                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="32" y="575" fill="#26a69a" font-size="11" font-weight="600" letter-spacing="2">ML &amp; AI LAYER</text>
+  <line x1="32" y1="581" x2="170" y2="581" stroke="#26a69a" stroke-width="1" opacity="0.4"/>
+
+  <rect x="32" y="588" width="340" height="120" rx="10" fill="#1c2340" stroke="#00897b" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="50" y="602" width="145" height="42" rx="6" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="122" y="620" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">MLflow Registry</text>
+  <text x="122" y="633" text-anchor="middle" fill="#aaaacc" font-size="8">Model Versioning</text>
+
+  <rect x="210" y="602" width="145" height="42" rx="6" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="282" y="620" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">Feature Store</text>
+  <text x="282" y="633" text-anchor="middle" fill="#aaaacc" font-size="8">Trigger Features</text>
+
+  <rect x="50" y="652" width="145" height="42" rx="6" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="122" y="670" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">Migraine Predictor</text>
+  <text x="122" y="683" text-anchor="middle" fill="#aaaacc" font-size="8">XGBoost / DL Model</text>
+
+  <rect x="210" y="652" width="145" height="42" rx="6" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="282" y="670" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">LLM / RAG Engine</text>
+  <text x="282" y="683" text-anchor="middle" fill="#aaaacc" font-size="8">Chat AI Assistant</text>
+
+  <!-- Serving Layer -->
+  <text x="400" y="575" fill="#ff9800" font-size="11" font-weight="600" letter-spacing="2">SERVING &amp; APIs</text>
+  <line x1="400" y1="581" x2="530" y2="581" stroke="#ff9800" stroke-width="1" opacity="0.4"/>
+
+  <rect x="400" y="588" width="332" height="120" rx="10" fill="#1c2340" stroke="#e65100" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="418" y="602" width="145" height="42" rx="6" fill="#0d1b38" stroke="#e65100" stroke-width="1"/>
+  <text x="490" y="620" text-anchor="middle" fill="#ff9800" font-size="10" font-weight="600">Model Serving</text>
+  <text x="490" y="633" text-anchor="middle" fill="#aaaacc" font-size="8">Real-time Endpoints</text>
+
+  <rect x="572" y="602" width="145" height="42" rx="6" fill="#0d1b38" stroke="#e65100" stroke-width="1"/>
+  <text x="644" y="620" text-anchor="middle" fill="#ff9800" font-size="10" font-weight="600">Databricks SQL</text>
+  <text x="644" y="633" text-anchor="middle" fill="#aaaacc" font-size="8">Dashboard Queries</text>
+
+  <rect x="418" y="652" width="145" height="42" rx="6" fill="#0d1b38" stroke="#e65100" stroke-width="1"/>
+  <text x="490" y="670" text-anchor="middle" fill="#ff9800" font-size="10" font-weight="600">Serverless API</text>
+  <text x="490" y="683" text-anchor="middle" fill="#aaaacc" font-size="8">Functions / REST</text>
+
+  <rect x="572" y="652" width="145" height="42" rx="6" fill="#0d1b38" stroke="#e65100" stroke-width="1"/>
+  <text x="644" y="670" text-anchor="middle" fill="#ff9800" font-size="10" font-weight="600">Vector Search</text>
+  <text x="644" y="683" text-anchor="middle" fill="#aaaacc" font-size="8">RAG Retrieval</text>
+
+  <!-- Arrow ML → Serving -->
+  <line x1="372" y1="648" x2="400" y2="648" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- Arrow Serving → App -->
+  <line x1="560" y1="708" x2="560" y2="758" stroke="#ffffff" stroke-width="1" opacity="0.3" marker-end="url(#arrowWhite)"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LAYER 5: Application Layer                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="32" y="758" fill="#6db3f8" font-size="11" font-weight="600" letter-spacing="2">APPLICATION LAYER</text>
+  <line x1="32" y1="764" x2="210" y2="764" stroke="#6db3f8" stroke-width="1" opacity="0.4"/>
+
+  <rect x="32" y="772" width="700" height="80" rx="10" fill="#1c2340" stroke="#4A90D9" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="50" y="786" width="130" height="52" rx="6" fill="#0d1b38" stroke="#4A90D9" stroke-width="1"/>
+  <text x="115" y="808" text-anchor="middle" fill="#6db3f8" font-size="10" font-weight="600">Dashboard UI</text>
+  <text x="115" y="822" text-anchor="middle" fill="#aaaacc" font-size="8">Health Score · Charts</text>
+
+  <rect x="195" y="786" width="130" height="52" rx="6" fill="#0d1b38" stroke="#4A90D9" stroke-width="1"/>
+  <text x="260" y="808" text-anchor="middle" fill="#6db3f8" font-size="10" font-weight="600">Sensor Monitor</text>
+  <text x="260" y="822" text-anchor="middle" fill="#aaaacc" font-size="8">Real-time Biometrics</text>
+
+  <rect x="340" y="786" width="130" height="52" rx="6" fill="#0d1b38" stroke="#4A90D9" stroke-width="1"/>
+  <text x="405" y="808" text-anchor="middle" fill="#6db3f8" font-size="10" font-weight="600">AI Chat</text>
+  <text x="405" y="822" text-anchor="middle" fill="#aaaacc" font-size="8">Health Assistant</text>
+
+  <rect x="485" y="786" width="130" height="52" rx="6" fill="#0d1b38" stroke="#4A90D9" stroke-width="1"/>
+  <text x="550" y="808" text-anchor="middle" fill="#6db3f8" font-size="10" font-weight="600">Alerts Engine</text>
+  <text x="550" y="822" text-anchor="middle" fill="#aaaacc" font-size="8">Push Notifications</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- RIGHT COLUMN: Governance & Observability        -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <text x="770" y="102" fill="#ef5350" font-size="11" font-weight="600" letter-spacing="2">GOVERNANCE &amp; SECURITY</text>
+  <line x1="770" y1="108" x2="990" y2="108" stroke="#ef5350" stroke-width="1" opacity="0.4"/>
+
+  <rect x="770" y="120" width="290" height="390" rx="12" fill="#1c2340" stroke="#c62828" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Unity Catalog -->
+  <rect x="788" y="138" width="254" height="60" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="915" y="162" text-anchor="middle" fill="#ef5350" font-size="12" font-weight="700">Unity Catalog</text>
+  <text x="915" y="178" text-anchor="middle" fill="#aaaacc" font-size="9">Centralized Governance · Fine-grained ACLs</text>
+
+  <!-- HIPAA -->
+  <rect x="788" y="210" width="120" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="848" y="232" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">HIPAA</text>
+  <text x="848" y="246" text-anchor="middle" fill="#aaaacc" font-size="8">PHI Encryption</text>
+
+  <!-- SOC 2 -->
+  <rect x="922" y="210" width="120" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="982" y="232" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">SOC 2</text>
+  <text x="982" y="246" text-anchor="middle" fill="#aaaacc" font-size="8">Audit Logging</text>
+
+  <!-- Data Lineage -->
+  <rect x="788" y="272" width="254" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="915" y="294" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">Data Lineage &amp; Provenance</text>
+  <text x="915" y="308" text-anchor="middle" fill="#aaaacc" font-size="8">End-to-end tracking: Patch → Bronze → Gold → Model</text>
+
+  <!-- Access Control -->
+  <rect x="788" y="334" width="120" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="848" y="356" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">Row-Level</text>
+  <text x="848" y="370" text-anchor="middle" fill="#aaaacc" font-size="8">Security Filters</text>
+
+  <!-- Consent -->
+  <rect x="922" y="334" width="120" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="982" y="356" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">Consent Mgmt</text>
+  <text x="982" y="370" text-anchor="middle" fill="#aaaacc" font-size="8">Patient Opt-in</text>
+
+  <!-- Secrets -->
+  <rect x="788" y="396" width="254" height="50" rx="8" fill="#0d1b38" stroke="#c62828" stroke-width="1"/>
+  <text x="915" y="418" text-anchor="middle" fill="#ef5350" font-size="10" font-weight="600">Secrets Management</text>
+  <text x="915" y="432" text-anchor="middle" fill="#aaaacc" font-size="8">Key Vault Integration · Token Rotation</text>
+
+  <text x="915" y="475" text-anchor="middle" fill="#c62828" font-size="9" opacity="0.5">Spans all layers ↕</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- RIGHT COLUMN: Observability            -->
+  <!-- ═══════════════════════════════════════ -->
+  <text x="770" y="540" fill="#26a69a" font-size="11" font-weight="600" letter-spacing="2">OBSERVABILITY &amp; OPS</text>
+  <line x1="770" y1="546" x2="980" y2="546" stroke="#26a69a" stroke-width="1" opacity="0.4"/>
+
+  <rect x="770" y="554" width="290" height="155" rx="12" fill="#1c2340" stroke="#00897b" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="788" y="570" width="120" height="50" rx="8" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="848" y="592" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">Lakehouse</text>
+  <text x="848" y="606" text-anchor="middle" fill="#aaaacc" font-size="8">Monitoring</text>
+
+  <rect x="922" y="570" width="120" height="50" rx="8" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="982" y="592" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">MLflow</text>
+  <text x="982" y="606" text-anchor="middle" fill="#aaaacc" font-size="8">Experiment Track</text>
+
+  <rect x="788" y="632" width="120" height="50" rx="8" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="848" y="654" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">Model Drift</text>
+  <text x="848" y="668" text-anchor="middle" fill="#aaaacc" font-size="8">Performance Alerts</text>
+
+  <rect x="922" y="632" width="120" height="50" rx="8" fill="#0d1b38" stroke="#00897b" stroke-width="1"/>
+  <text x="982" y="654" text-anchor="middle" fill="#26a69a" font-size="10" font-weight="600">Cost Mgmt</text>
+  <text x="982" y="668" text-anchor="middle" fill="#aaaacc" font-size="8">Cluster Autoscale</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- BOTTOM: Scaling / Infrastructure        -->
+  <!-- ═══════════════════════════════════════ -->
+  <text x="32" y="890" fill="#aaaacc" font-size="11" font-weight="600" letter-spacing="2">INFRASTRUCTURE &amp; SCALING</text>
+  <line x1="32" y1="896" x2="290" y2="896" stroke="#aaaacc" stroke-width="1" opacity="0.3"/>
+
+  <rect x="32" y="905" width="1028" height="65" rx="10" fill="#1c2340" stroke="#555577" stroke-width="1" filter="url(#shadow)"/>
+
+  <rect x="50" y="916" width="150" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="125" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Photon Engine</text>
+  <text x="125" y="947" text-anchor="middle" fill="#777799" font-size="8">Vectorized Queries</text>
+
+  <rect x="215" y="916" width="150" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="290" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Serverless Compute</text>
+  <text x="290" y="947" text-anchor="middle" fill="#777799" font-size="8">Auto-scaling Clusters</text>
+
+  <rect x="380" y="916" width="150" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="455" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Multi-Region</text>
+  <text x="455" y="947" text-anchor="middle" fill="#777799" font-size="8">Azure / AWS / GCP</text>
+
+  <rect x="545" y="916" width="150" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="620" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Delta Sharing</text>
+  <text x="620" y="947" text-anchor="middle" fill="#777799" font-size="8">Cross-org Data Exchange</text>
+
+  <rect x="710" y="916" width="165" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="792" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Structured Streaming</text>
+  <text x="792" y="947" text-anchor="middle" fill="#777799" font-size="8">Sub-second Latency</text>
+
+  <rect x="890" y="916" width="155" height="42" rx="6" fill="#0d1b38" stroke="#555577" stroke-width="1"/>
+  <text x="967" y="934" text-anchor="middle" fill="#aaaacc" font-size="9" font-weight="600">Spot Instances</text>
+  <text x="967" y="947" text-anchor="middle" fill="#777799" font-size="8">Cost Optimization</text>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- Data flow labels on arrows     -->
+  <!-- ═══════════════════════════════ -->
+  <text x="390" y="370" fill="#aaaacc" font-size="7" font-style="italic">CDC + Streaming</text>
+  <text x="230" y="555" fill="#aaaacc" font-size="7" font-style="italic">Features</text>
+  <text x="530" y="555" fill="#aaaacc" font-size="7" font-style="italic">Gold Tables</text>
+  <text x="568" y="742" fill="#aaaacc" font-size="7" font-style="italic">REST / WS</text>
+
+  <!-- Databricks Logo area (stylized) -->
+  <rect x="770" y="772" width="290" height="80" rx="12" fill="#1c2340" stroke="#FF3621" stroke-width="2" filter="url(#shadow)"/>
+  <text x="915" y="804" text-anchor="middle" fill="url(#databricksGrad)" font-size="20" font-weight="800" letter-spacing="1">DATABRICKS</text>
+  <text x="915" y="824" text-anchor="middle" fill="#FF6F61" font-size="10">Lakehouse Platform</text>
+  <text x="915" y="840" text-anchor="middle" fill="#aaaacc" font-size="8">Unity Catalog · Delta Lake · MLflow · Photon</text>
+
+  <!-- Footer -->
+  <text x="700" y="1000" text-anchor="middle" fill="#555577" font-size="9">Cortexa Migraine Health Platform — Databricks Lakehouse Architecture — v1.0</text>
+  <text x="700" y="1015" text-anchor="middle" fill="#444466" font-size="8">Real-time biometric ingestion → Medallion data refinement → ML-powered predictions → Patient-facing application</text>
+</svg>
