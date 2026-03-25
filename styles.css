@@ -116,7 +116,7 @@ html, body {
   margin-bottom: 14px;
 }
 
-/* Card Row (legacy) */
+/* Card Row */
 .card-row {
   display: flex;
   gap: 12px;
@@ -239,178 +239,16 @@ html, body {
   line-height: 1.5;
 }
 
-/* Enhanced Chart Cards */
-.chart-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.chart-card-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.chart-icon {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.chart-icon.migraine-icon { background: #4A7ADB; }
-.chart-icon.sleep-icon { background: #6B4FA0; }
-.zzz-label {
-  position: absolute;
-  top: -2px; right: -4px;
-  font-size: 9px;
-  font-weight: 800;
-  color: #6B4FA0;
-}
-.chart-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin: 0;
-}
-.chart-subtitle-text {
-  font-size: 12px;
-  color: #6B7B8D;
-  margin: 2px 0 0;
-}
-.chart-canvas-wrap {
-  margin: 0 -4px 16px;
-}
-.chart-canvas-wrap canvas {
-  width: 100% !important;
-  height: 200px !important;
-}
-.chart-stats-row {
-  display: flex;
-  align-items: center;
-  background: #F0F5FA;
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 12px;
-}
-.chart-stat {
-  flex: 1;
-  text-align: center;
-}
-.chart-stat-label {
-  display: block;
-  font-size: 11px;
-  color: #6B7B8D;
-  margin-bottom: 4px;
-}
-.chart-stat-value {
-  display: block;
-  font-size: 17px;
-  font-weight: 800;
-  color: #1a1a2e;
-}
-.chart-stat-divider {
-  width: 1px;
-  height: 36px;
-  background: #D0D8E4;
-}
-.chart-insight {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: #FFFBEB;
-  border-radius: 12px;
-  padding: 12px 14px;
-}
-.chart-insight-icon { font-size: 18px; flex-shrink: 0; }
-.chart-insight p {
-  font-size: 13px;
-  color: #555;
-  line-height: 1.5;
-  margin: 0;
-}
-.chart-connection-card {
-  background: #F8F9FB;
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 12px;
-  border: 1px solid #E8ECF0;
-}
-.chart-connection-header {
-  margin-bottom: 10px;
-}
-.connection-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a2e;
-}
-.chart-connection-body {}
-.connection-flow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-.connection-sleep-icon { font-size: 20px; }
-.connection-text {
-  font-size: 13px;
-  font-weight: 600;
-  color: #333;
-}
-.connection-arrow {
-  color: #FF9800;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.connection-risk {
-  background: #FFF3E0;
-  color: #E65100;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-.connection-detail {
-  font-size: 12px;
-  color: #777;
-  margin: 0;
-}
-.chart-best-days {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #E8F5E9;
-  border-radius: 12px;
-  padding: 12px 14px;
-}
-.chart-best-days span {
-  font-size: 13px;
-  color: #2E7D32;
-}
-.chart-legend {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 14px;
-  padding: 8px 0;
-}
-.legend-item {
+/* Mini Chart Label */
+.mini-chart-label {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #555;
+  color: #6B7B8D;
+  margin-bottom: 8px;
 }
-.legend-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-}
-.legend-dot.blue { background: #4A7ADB; }
-.legend-dot.purple { background: #7B4FA0; }
-.legend-dot.orange { background: #FF9800; }
+.mini-chart-label strong { color: #1a1a2e; }
 
 /* Migraine Status */
 .migraine-status {
@@ -729,4 +567,4 @@ html, body {
 .content-area::-webkit-scrollbar { width: 0; }
 
 /* Make sure canvases are responsive */
-canvas { width: 100% !important; }
+canvas { width: 100% !important; height: auto !important; }
