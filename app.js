@@ -28,90 +28,33 @@ function drawFrequencyChart() {
   canvas.height = rect.height * dpr;
   ctx.scale(dpr, dpr);
   const w = rect.width, h = rect.height;
+
   ctx.clearRect(0, 0, w, h);
 
-  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const data = [4, 6, 5, 8, 3, 2, 4];
-  const peakIdx = 3;
-  const maxVal = 10;
-  const padLeft = 38, padRight = 12, padTop = 30, padBottom = 24;
-  const chartW = w - padLeft - padRight;
-  const chartH = h - padTop - padBottom;
-
-  // Y-axis label
-  ctx.save();
-  ctx.translate(10, padTop + chartH / 2);
-  ctx.rotate(-Math.PI / 2);
-  ctx.fillStyle = '#888';
-  ctx.font = '9px Inter';
-  ctx.textAlign = 'center';
-  ctx.fillText('Number of Migraines', 0, 0);
-  ctx.restore();
-
-  // Gridlines and Y labels
-  ctx.font = '10px Inter';
-  ctx.textAlign = 'right';
-  ctx.fillStyle = '#999';
-  for (let v = 0; v <= maxVal; v += 2) {
-    const y = padTop + chartH - (v / maxVal) * chartH;
-    ctx.strokeStyle = '#EEF1F5';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(padLeft, y);
-    ctx.lineTo(w - padRight, y);
-    ctx.stroke();
-    ctx.fillText(v.toString(), padLeft - 6, y + 3);
-  }
-
-  // Bars
-  const barGap = chartW / days.length;
-  const barWidth = barGap * 0.55;
+  const data = [5, 7, 4, 7, 3, 6];
+  const barWidth = w / (data.length * 2);
+  const maxVal = 8;
 
   data.forEach((val, i) => {
-    const cx = padLeft + barGap * i + barGap / 2;
-    const x = cx - barWidth / 2;
-    const barH = (val / maxVal) * chartH;
-    const y = padTop + chartH - barH;
+    const x = i * (w / data.length) + barWidth / 2;
+    const barH = (val / maxVal) * (h - 10);
 
-    const isPeak = i === peakIdx;
-    const grad = ctx.createLinearGradient(x, y, x, padTop + chartH);
-    if (isPeak) {
-      grad.addColorStop(0, '#8B5CF6');
-      grad.addColorStop(1, '#6D3FCF');
-    } else {
-      grad.addColorStop(0, '#5B9AE8');
-      grad.addColorStop(1, '#3A6EBF');
-    }
+    const grad = ctx.createLinearGradient(x, h - barH, x, h);
+    grad.addColorStop(0, '#4A90D9');
+    grad.addColorStop(1, '#2E5FA1');
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.roundRect(x, y, barWidth, barH, [4, 4, 0, 0]);
+    ctx.roundRect(x, h - barH, barWidth, barH, [3, 3, 0, 0]);
     ctx.fill();
-
-    // Value label on top
-    ctx.fillStyle = isPeak ? '#7B4FA0' : '#3A6EBF';
-    ctx.font = isPeak ? 'bold 11px Inter' : '11px Inter';
-    ctx.textAlign = 'center';
-    ctx.fillText(val.toString(), cx, y - 6);
-
-    // Peak Day label
-    if (isPeak) {
-      const labelW = 60, labelH = 18;
-      const lx = cx - labelW / 2, ly = y - 28;
-      ctx.fillStyle = '#F0EBFF';
-      ctx.beginPath();
-      ctx.roundRect(lx, ly, labelW, labelH, 9);
-      ctx.fill();
-      ctx.fillStyle = '#7B4FA0';
-      ctx.font = 'bold 10px Inter';
-      ctx.fillText('Peak Day', cx, ly + 13);
-    }
-
-    // Day label
-    ctx.fillStyle = '#777';
-    ctx.font = '10px Inter';
-    ctx.textAlign = 'center';
-    ctx.fillText(days[i], cx, h - 6);
   });
+
+  // Y-axis labels
+  ctx.fillStyle = '#999';
+  ctx.font = '9px Inter';
+  ctx.textAlign = 'right';
+  for (let i = 0; i <= 7; i += 7) {
+    ctx.fillText(i.toString(), w - 2, h - (i / maxVal) * (h - 10) + 3);
+  }
 }
 
 function drawSleepChart() {
@@ -124,98 +67,22 @@ function drawSleepChart() {
   canvas.height = rect.height * dpr;
   ctx.scale(dpr, dpr);
   const w = rect.width, h = rect.height;
+
   ctx.clearRect(0, 0, w, h);
 
-  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const data = [6.8, 7.1, 6.5, 7.0, 7.8, 8.2, 7.9];
-  const lowestIdx = 2;
-  const minY = 6, maxY = 9;
-  const padLeft = 32, padRight = 12, padTop = 20, padBottom = 24;
-  const chartW = w - padLeft - padRight;
-  const chartH = h - padTop - padBottom;
+  const data = [6.5, 7.8, 7.0, 8.2, 6.8, 7.5, 7.2];
+  const barWidth = w / (data.length * 1.8);
+  const maxVal = 10;
 
-  // Gridlines and Y labels
-  ctx.font = '10px Inter';
-  ctx.textAlign = 'right';
-  for (let v = minY; v <= maxY; v++) {
-    const y = padTop + chartH - ((v - minY) / (maxY - minY)) * chartH;
-    ctx.strokeStyle = '#EEF1F5';
-    ctx.lineWidth = 1;
+  data.forEach((val, i) => {
+    const x = i * (w / data.length) + barWidth * 0.3;
+    const barH = (val / maxVal) * (h - 10);
+
+    const alpha = 0.4 + (val / maxVal) * 0.6;
+    ctx.fillStyle = `rgba(74, 144, 217, ${alpha})`;
     ctx.beginPath();
-    ctx.moveTo(padLeft, y);
-    ctx.lineTo(w - padRight, y);
-    ctx.stroke();
-    ctx.fillStyle = '#999';
-    ctx.fillText(v + ' h', padLeft - 6, y + 3);
-  }
-
-  // Compute points
-  const gap = chartW / (days.length - 1);
-  const points = data.map((val, i) => ({
-    x: padLeft + gap * i,
-    y: padTop + chartH - ((val - minY) / (maxY - minY)) * chartH,
-    val
-  }));
-
-  // Fill area under line
-  ctx.beginPath();
-  ctx.moveTo(points[0].x, padTop + chartH);
-  points.forEach(p => ctx.lineTo(p.x, p.y));
-  ctx.lineTo(points[points.length - 1].x, padTop + chartH);
-  ctx.closePath();
-  const areaGrad = ctx.createLinearGradient(0, padTop, 0, padTop + chartH);
-  areaGrad.addColorStop(0, 'rgba(107, 79, 160, 0.15)');
-  areaGrad.addColorStop(1, 'rgba(107, 79, 160, 0.02)');
-  ctx.fillStyle = areaGrad;
-  ctx.fill();
-
-  // Line
-  ctx.beginPath();
-  ctx.moveTo(points[0].x, points[0].y);
-  for (let i = 1; i < points.length; i++) {
-    ctx.lineTo(points[i].x, points[i].y);
-  }
-  ctx.strokeStyle = '#6B4FA0';
-  ctx.lineWidth = 2.5;
-  ctx.lineJoin = 'round';
-  ctx.stroke();
-
-  // Dots and labels
-  points.forEach((p, i) => {
-    const isLowest = i === lowestIdx;
-
-    // Dot
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, isLowest ? 6 : 4, 0, Math.PI * 2);
-    ctx.fillStyle = isLowest ? '#FF9800' : '#6B4FA0';
+    ctx.roundRect(x, h - barH, barWidth, barH, [3, 3, 0, 0]);
     ctx.fill();
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    // Value label
-    ctx.fillStyle = isLowest ? '#E65100' : '#6B4FA0';
-    ctx.font = 'bold 10px Inter';
-    ctx.textAlign = 'center';
-    ctx.fillText(p.val.toFixed(1), p.x, p.y - 12);
-
-    // "Lowest" badge
-    if (isLowest) {
-      const badgeW = 48, badgeH = 16;
-      const bx = p.x - badgeW / 2, by = p.y - 32;
-      ctx.fillStyle = '#FFF3E0';
-      ctx.beginPath();
-      ctx.roundRect(bx, by, badgeW, badgeH, 8);
-      ctx.fill();
-      ctx.fillStyle = '#E65100';
-      ctx.font = 'bold 9px Inter';
-      ctx.fillText('Lowest', p.x, by + 12);
-    }
-
-    // Day label
-    ctx.fillStyle = '#777';
-    ctx.font = '10px Inter';
-    ctx.fillText(days[i], p.x, h - 6);
   });
 }
 
