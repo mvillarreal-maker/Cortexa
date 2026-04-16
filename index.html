@@ -191,20 +191,58 @@
           </div>
         </div>
 
-        <div class="card-row">
-          <div class="card half">
-            <h4>Migraine Frequency</h4>
-            <div class="mini-chart-label">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
-              Month
+        <div class="card">
+          <div class="chart-card-header">
+            <div>
+              <h4>Migraine Frequency</h4>
+              <p class="chart-subtitle">Past 6 months</p>
             </div>
-            <canvas id="frequencyChart" width="150" height="80"></canvas>
+            <div class="trend-badge trend-down">&#8595; 50% vs last month</div>
           </div>
-          <div class="card half">
-            <h4>Sleep Patterns</h4>
-            <div class="mini-chart-label">Avg: <strong>7.2</strong> hrs/night</div>
-            <canvas id="sleepChart" width="150" height="80"></canvas>
+          <div class="chart-stats-row">
+            <div class="chart-stat">
+              <span class="chart-stat-value highlight">3</span>
+              <span class="chart-stat-label">This Month</span>
+            </div>
+            <div class="chart-stat-divider"></div>
+            <div class="chart-stat">
+              <span class="chart-stat-value">6</span>
+              <span class="chart-stat-label">Last Month</span>
+            </div>
+            <div class="chart-stat-divider"></div>
+            <div class="chart-stat">
+              <span class="chart-stat-value">3</span>
+              <span class="chart-stat-label">Best Month</span>
+            </div>
           </div>
+          <canvas id="frequencyChart"></canvas>
+        </div>
+
+        <div class="card">
+          <div class="chart-card-header">
+            <div>
+              <h4>Sleep Patterns</h4>
+              <p class="chart-subtitle">This week</p>
+            </div>
+            <div class="sleep-quality-badge good">Good Quality</div>
+          </div>
+          <div class="chart-stats-row">
+            <div class="chart-stat">
+              <span class="chart-stat-value good">7.2h</span>
+              <span class="chart-stat-label">Avg / Night</span>
+            </div>
+            <div class="chart-stat-divider"></div>
+            <div class="chart-stat">
+              <span class="chart-stat-value">8.2h</span>
+              <span class="chart-stat-label">Best Night</span>
+            </div>
+            <div class="chart-stat-divider"></div>
+            <div class="chart-stat">
+              <span class="chart-stat-value warn">6.5h</span>
+              <span class="chart-stat-label">Lowest</span>
+            </div>
+          </div>
+          <canvas id="sleepChart"></canvas>
         </div>
 
         <div class="migraine-status">

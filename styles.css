@@ -250,6 +250,70 @@ html, body {
 }
 .mini-chart-label strong { color: #1a1a2e; }
 
+/* Enhanced Chart Cards */
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.chart-subtitle {
+  font-size: 12px;
+  color: #6B7B8D;
+  font-weight: 400;
+  margin-top: 2px;
+}
+.trend-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.trend-badge.trend-down { background: #E8F5E9; color: #388E3C; }
+.trend-badge.trend-up   { background: #FFF3E0; color: #E65100; }
+.sleep-quality-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+.sleep-quality-badge.good { background: #E8F5E9; color: #388E3C; }
+.chart-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #F8FAFC;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+.chart-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.chart-stat-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.chart-stat-value.good      { color: #4CAF50; }
+.chart-stat-value.warn      { color: #FF9800; }
+.chart-stat-value.highlight { color: #4A90D9; }
+.chart-stat-label {
+  font-size: 11px;
+  color: #6B7B8D;
+  text-align: center;
+}
+.chart-stat-divider {
+  width: 1px;
+  height: 28px;
+  background: #E8ECF0;
+}
+#frequencyChart, #sleepChart { height: 130px !important; }
+
 /* Migraine Status */
 .migraine-status {
   display: flex;

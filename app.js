@@ -28,33 +28,61 @@ function drawFrequencyChart() {
   canvas.height = rect.height * dpr;
   ctx.scale(dpr, dpr);
   const w = rect.width, h = rect.height;
-
   ctx.clearRect(0, 0, w, h);
 
-  const data = [5, 7, 4, 7, 3, 6];
-  const barWidth = w / (data.length * 2);
-  const maxVal = 8;
+  const data = [7, 6, 8, 5, 6, 3];
+  const labels = ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'];
+  const maxVal = 10;
+  const bottomPad = 22;
+  const topPad = 18;
+  const chartH = h - bottomPad - topPad;
+  const slotW = w / data.length;
+  const barW = slotW * 0.5;
+
+  // Subtle gridlines
+  ctx.strokeStyle = '#F0F2F5';
+  ctx.lineWidth = 1;
+  for (let i = 1; i <= 3; i++) {
+    const y = topPad + chartH - (i / 4) * chartH;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(w, y);
+    ctx.stroke();
+  }
 
   data.forEach((val, i) => {
-    const x = i * (w / data.length) + barWidth / 2;
-    const barH = (val / maxVal) * (h - 10);
+    const x = i * slotW + (slotW - barW) / 2;
+    const barH = (val / maxVal) * chartH;
+    const y = topPad + chartH - barH;
+    const isCurrent = i === data.length - 1;
 
-    const grad = ctx.createLinearGradient(x, h - barH, x, h);
-    grad.addColorStop(0, '#4A90D9');
-    grad.addColorStop(1, '#2E5FA1');
+    const grad = ctx.createLinearGradient(x, y, x, topPad + chartH);
+    if (isCurrent) {
+      grad.addColorStop(0, '#4A90D9');
+      grad.addColorStop(1, '#2E5FA1');
+      ctx.globalAlpha = 1;
+    } else {
+      grad.addColorStop(0, '#90C2F0');
+      grad.addColorStop(1, '#6A9ED0');
+      ctx.globalAlpha = 0.75;
+    }
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.roundRect(x, h - barH, barWidth, barH, [3, 3, 0, 0]);
+    ctx.roundRect(x, y, barW, barH, [3, 3, 0, 0]);
     ctx.fill();
-  });
+    ctx.globalAlpha = 1;
 
-  // Y-axis labels
-  ctx.fillStyle = '#999';
-  ctx.font = '9px Inter';
-  ctx.textAlign = 'right';
-  for (let i = 0; i <= 7; i += 7) {
-    ctx.fillText(i.toString(), w - 2, h - (i / maxVal) * (h - 10) + 3);
-  }
+    // Value label above bar
+    ctx.fillStyle = isCurrent ? '#2E5FA1' : '#aaa';
+    ctx.font = (isCurrent ? 'bold ' : '') + '10px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText(val.toString(), x + barW / 2, y - 4);
+
+    // Month label
+    ctx.fillStyle = isCurrent ? '#1a1a2e' : '#aaa';
+    ctx.font = (isCurrent ? 'bold ' : '') + '10px Inter';
+    ctx.fillText(labels[i], x + barW / 2, h - 5);
+  });
 }
 
 function drawSleepChart() {
@@ -67,22 +95,71 @@ function drawSleepChart() {
   canvas.height = rect.height * dpr;
   ctx.scale(dpr, dpr);
   const w = rect.width, h = rect.height;
-
   ctx.clearRect(0, 0, w, h);
 
   const data = [6.5, 7.8, 7.0, 8.2, 6.8, 7.5, 7.2];
-  const barWidth = w / (data.length * 1.8);
+  const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   const maxVal = 10;
+  const targetHrs = 7;
+  const bottomPad = 22;
+  const topPad = 18;
+  const chartH = h - bottomPad - topPad;
+  const slotW = w / data.length;
+  const barW = slotW * 0.52;
+
+  // Dashed goal line at 7h
+  const targetY = topPad + chartH - (targetHrs / maxVal) * chartH;
+  ctx.strokeStyle = 'rgba(76, 175, 80, 0.5)';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([5, 4]);
+  ctx.beginPath();
+  ctx.moveTo(0, targetY);
+  ctx.lineTo(w, targetY);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Goal label
+  ctx.fillStyle = '#4CAF50';
+  ctx.font = '9px Inter';
+  ctx.textAlign = 'left';
+  ctx.fillText('Goal: 7h', 2, targetY - 3);
 
   data.forEach((val, i) => {
-    const x = i * (w / data.length) + barWidth * 0.3;
-    const barH = (val / maxVal) * (h - 10);
+    const x = i * slotW + (slotW - barW) / 2;
+    const barH = (val / maxVal) * chartH;
+    const y = topPad + chartH - barH;
+    const isToday = i === data.length - 1;
 
-    const alpha = 0.4 + (val / maxVal) * 0.6;
-    ctx.fillStyle = `rgba(74, 144, 217, ${alpha})`;
+    // Color by sleep quality
+    let c1, c2;
+    if (val >= 7) {
+      c1 = '#66BB6A'; c2 = '#43A047';
+    } else if (val >= 6) {
+      c1 = '#FFA726'; c2 = '#EF6C00';
+    } else {
+      c1 = '#EF5350'; c2 = '#C62828';
+    }
+
+    const grad = ctx.createLinearGradient(x, y, x, topPad + chartH);
+    grad.addColorStop(0, c1);
+    grad.addColorStop(1, c2);
+    ctx.fillStyle = grad;
+    ctx.globalAlpha = isToday ? 1 : 0.72;
     ctx.beginPath();
-    ctx.roundRect(x, h - barH, barWidth, barH, [3, 3, 0, 0]);
+    ctx.roundRect(x, y, barW, barH, [3, 3, 0, 0]);
     ctx.fill();
+    ctx.globalAlpha = 1;
+
+    // Value label above bar
+    ctx.fillStyle = isToday ? '#333' : '#aaa';
+    ctx.font = (isToday ? 'bold ' : '') + '9px Inter';
+    ctx.textAlign = 'center';
+    ctx.fillText(val.toFixed(1), x + barW / 2, y - 4);
+
+    // Day label
+    ctx.fillStyle = isToday ? '#1a1a2e' : '#aaa';
+    ctx.font = (isToday ? 'bold ' : '') + '10px Inter';
+    ctx.fillText(labels[i], x + barW / 2, h - 5);
   });
 }
 
